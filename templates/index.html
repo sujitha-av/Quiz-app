@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block main %}
+
+{% if msg %}
+<div class="alert alert-success" role="alert">{{ msg }}</div>
+{% endif %}
+
+<style>
+    div{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+</style>
+    <form action="/question" method="get">
+        <button class="btn btn-primary" type="submit">Take a question</button>
+    </form>
+    <p> <br> </p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p >Leaderboard!</p>
+    <div>
+    <table>
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in details %}
+                <tr>
+                    <td>{{ row.username }}</td>
+                    <td>{{ row.score }}</td>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

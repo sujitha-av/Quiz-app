@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Previous Daily Patronuses
+{% endblock %}
+
+{% block main %}
+    <div>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Question</th>
+                <th>Answer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in details %}
+                <tr>
+                    <td>{{ row.date }}</td>
+                    <td>{{ row.question }}</td>
+                    <td>{{ row.answer }}</td>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}
